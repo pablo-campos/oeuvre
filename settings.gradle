@@ -1,1 +1,1 @@
-include ':oeuvre', ':app', ':base', ':instantapp'
+include ':app'
