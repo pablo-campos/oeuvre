@@ -1,6 +1,8 @@
 <resources>
 
 	<string name="app_name">Oeuvre</string>
-	<string name="oeuvre_description">This app contains a collection of some side projects I personally work on (see below).</string>
+
+	<string name="oeuvre_description">A collection of items.</string>
+	<string name="preview_content_description">Preview image</string>
 
 </resources>
