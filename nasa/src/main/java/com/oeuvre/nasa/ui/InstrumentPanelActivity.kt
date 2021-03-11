@@ -13,12 +13,6 @@ import com.oeuvre.nasa.R
 class InstrumentPanelActivity : AppCompatActivity() {
 
 
-	private lateinit var recyclerView: RecyclerView
-	private lateinit var viewAdapter: RecyclerView.Adapter<*>
-	private lateinit var viewManager: RecyclerView.LayoutManager
-
-
-
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_instrument_panel)

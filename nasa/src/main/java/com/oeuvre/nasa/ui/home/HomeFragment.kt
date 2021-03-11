@@ -8,10 +8,17 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.oeuvre.nasa.R
 
 class HomeFragment : Fragment() {
 
+
+
+
+	private lateinit var recyclerView: RecyclerView
+	private lateinit var viewAdapter: RecyclerView.Adapter<*>
+	private lateinit var viewManager: RecyclerView.LayoutManager
 	private lateinit var homeViewModel: HomeViewModel
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
