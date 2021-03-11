@@ -1,4 +1,4 @@
-package com.pablocampos.test.ui.notifications
+package com.oeuvre.nasa.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

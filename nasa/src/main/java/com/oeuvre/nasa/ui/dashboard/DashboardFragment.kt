@@ -1,4 +1,4 @@
-package com.pablocampos.test.ui.dashboard
+package com.oeuvre.nasa.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
