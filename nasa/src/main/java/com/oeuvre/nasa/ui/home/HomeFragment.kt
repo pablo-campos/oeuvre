@@ -14,8 +14,6 @@ import com.oeuvre.nasa.R
 class HomeFragment : Fragment() {
 
 
-
-
 	private lateinit var recyclerView: RecyclerView
 	private lateinit var viewAdapter: RecyclerView.Adapter<*>
 	private lateinit var viewManager: RecyclerView.LayoutManager
@@ -24,11 +22,18 @@ class HomeFragment : Fragment() {
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 		homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
 		val root = inflater.inflate(R.layout.fragment_home, container, false)
-		val textView: TextView = root.findViewById(R.id.text_home)
+		val recyclerView: RecyclerView = root.findViewById(R.id.recycler_view)
+
+
+
+
+
+
 
 		homeViewModel.text.observe(viewLifecycleOwner, Observer {
-			textView.text = it
+			// TODO update: textView.text = it
 		})
 
 		return root
