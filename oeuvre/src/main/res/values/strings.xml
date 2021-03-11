@@ -2,7 +2,13 @@
 
 	<string name="app_name">Oeuvre</string>
 
+	<string name="title_home">Home</string>
+	<string name="title_dashboard">Dashboard</string>
+	<string name="title_notifications">Notifications</string>
+
 	<string name="oeuvre_description">A collection of items.</string>
 	<string name="preview_content_description">Preview image</string>
+
+	<string name="nasa_api_key">yMQiKetuc0T3wdacxX2e7ADsa7XkXmbNHbuTnfGv</string>
 
 </resources>

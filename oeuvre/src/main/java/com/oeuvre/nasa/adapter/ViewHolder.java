@@ -1,14 +1,16 @@
-package com.oeuvre.adapter;
+package com.oeuvre.nasa.adapter;
 
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.oeuvre.R;
-import com.oeuvre.model.Work;
+import com.oeuvre.nasa.R;
+import com.oeuvre.nasa.model.Work;
+
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 // Provide a reference to the views for each data item
 // Complex data items may need more than one view per item, and
@@ -27,7 +29,6 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 		super(v);
 
 		cardView = (CardView) v;
-		cardView.setCardBackgroundColor(v.getContext().getResources().getColor(R.color.cardBackgroundColor, null));
 		title = v.findViewById(R.id.work_title);
 		description = v.findViewById(R.id.work_description);
 		preview = v.findViewById(R.id.work_image);
@@ -35,7 +36,14 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
 
 
-	public void initialize(final Work work){
+	public void initialize(final Work work, final OeuvreClickListener oeuvreClickListener){
+
+		cardView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick (final View v) {
+				oeuvreClickListener.onClick();
+			}
+		});
 
 		title.setText(work.getTitle());
 		description.setText(work.getDescription());

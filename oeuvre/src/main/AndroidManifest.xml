@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.oeuvre">
+	package="com.oeuvre.nasa">
 
 	<!-- Permissions-->
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -12,9 +12,9 @@
 		android:label="@string/app_name"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/AppTheme">
+		android:theme="@style/OeuvreTheme">
 
-		<activity android:name=".OeuvreActivity">
+		<activity android:name="com.oeuvre.nasa.ui.InstrumentPanelActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
