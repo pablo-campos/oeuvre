@@ -1,4 +1,4 @@
-package com.oeuvre.nasa.ui.home
+package com.oeuvre.nasa.ui.rovers
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,21 +13,21 @@ import com.oeuvre.nasa.R
 import com.oeuvre.nasa.adapter.PhotoAdapter
 import com.oeuvre.nasa.model.Photo
 
-class HomeFragment : Fragment() {
+class RoversFragment : Fragment() {
 
-
+	private lateinit var roversViewModel: RoversViewModel
 	private lateinit var viewAdapter: RecyclerView.Adapter<*>
 	private lateinit var viewManager: RecyclerView.LayoutManager
-	private lateinit var homeViewModel: HomeViewModel
+
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-		homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+		roversViewModel = ViewModelProvider(this).get(RoversViewModel::class.java)
 
-		val root = inflater.inflate(R.layout.fragment_apod, container, false)
+		val root = inflater.inflate(R.layout.fragment_rovers, container, false)
 		val recyclerView: RecyclerView = root.findViewById(R.id.recycler_view)
 
-		homeViewModel.text.observe(viewLifecycleOwner, Observer {
+		roversViewModel.text.observe(viewLifecycleOwner, Observer {
 			// TODO update: textView.text = it
 		})
 

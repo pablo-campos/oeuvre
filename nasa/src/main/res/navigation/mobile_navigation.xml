@@ -8,13 +8,13 @@
 
 	<fragment
 		android:id="@+id/navigation_apod"
-		android:name="com.oeuvre.nasa.ui.home.HomeFragment"
+		android:name="com.oeuvre.nasa.ui.apod.ApodFragment"
 		android:label="@string/title_apod"
 		tools:layout="@layout/fragment_apod" />
 
 	<fragment
 		android:id="@+id/navigation_rovers"
-		android:name="com.oeuvre.nasa.ui.dashboard.DashboardFragment"
+		android:name="com.oeuvre.nasa.ui.rovers.RoversFragment"
 		android:label="@string/title_rovers"
 		tools:layout="@layout/fragment_rovers" />
 
