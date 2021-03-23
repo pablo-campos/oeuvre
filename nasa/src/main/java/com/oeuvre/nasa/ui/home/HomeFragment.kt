@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.oeuvre.nasa.R
+import com.oeuvre.nasa.adapter.PhotoAdapter
+import com.oeuvre.nasa.model.Photo
 
 class HomeFragment : Fragment() {
 
 
-	private lateinit var recyclerView: RecyclerView
 	private lateinit var viewAdapter: RecyclerView.Adapter<*>
 	private lateinit var viewManager: RecyclerView.LayoutManager
 	private lateinit var homeViewModel: HomeViewModel
@@ -23,45 +24,23 @@ class HomeFragment : Fragment() {
 
 		homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-		val root = inflater.inflate(R.layout.fragment_home, container, false)
+		val root = inflater.inflate(R.layout.fragment_apod, container, false)
 		val recyclerView: RecyclerView = root.findViewById(R.id.recycler_view)
-
-
-
-
-
-
 
 		homeViewModel.text.observe(viewLifecycleOwner, Observer {
 			// TODO update: textView.text = it
 		})
 
-		return root
+		// Add fotos here:
+		val photos1 = Photo("Title 1", "Description 1")
+		val photos2 = Photo("Title 2", "Description 2")
+		val photos3 = Photo("Title 3", "Description 3")
+		val photos = listOf(photos1, photos2, photos3)
 
+		viewManager = LinearLayoutManager(activity)
+		viewAdapter = PhotoAdapter(photos)
 
-
-
-		// Add projects here:
-/*		val work1 = Work("Title 1", "Description 1")
-		val work2 : Work
-		work2 = Work("Title 2", "Description 2")
-		work2.preview = "http://goo.gl/gEgYUd"
-		val work3 : Work = Work("Title 3", "Description 3")
-
-		val works = listOf(work1, work2, work3)
-
-		val oeuvreClickListener = OeuvreClickListener {
-			Toast.makeText(this, "Testing", Toast.LENGTH_SHORT).show()
-		}
-
-		oeuvreClickListener.let {
-
-		}
-
-		viewManager = LinearLayoutManager(this)
-		viewAdapter = OeuvreAdapter(works, oeuvreClickListener)
-
-		recyclerView = findViewById<RecyclerView>(R.id.works_list).apply {
+		recyclerView.apply {
 
 			// Use this setting to improve performance if you know that changes
 			// in content do not change the layout size of the RecyclerView
@@ -72,6 +51,8 @@ class HomeFragment : Fragment() {
 
 			// specify an viewAdapter (see also next example)
 			adapter = viewAdapter
-		}*/
+		}
+
+		return root
 	}
 }
