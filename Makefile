@@ -18,7 +18,16 @@ help:
 	@echo "================================================================="
 
 # Run all languages in sequence
-run-all: js python ruby bash java kotlin
+run-all:
+	@echo ""
+	@echo "Running all language versions..."
+	@echo ""
+	@$(MAKE) js
+	@$(MAKE) python
+	@$(MAKE) ruby
+	@$(MAKE) bash
+	@$(MAKE) java
+	@$(MAKE) kotlin
 	@echo "All language runs completed successfully!"
 
 # Individual language runners
