@@ -99,9 +99,12 @@ The commit `Type` must be exactly one of the following:
 - **`Documentation`**: Documentation updates (e.g., `README.md`, guide files, comments, docstrings).
 - **`Configuration`**: Language version updates, build tool changes, and environment setup (e.g., `.tool-versions`, Gradle build files, `package.json` scripts/metadata, Gemfile updates).
 - **`Feature`**: Specific to adding new functionality or new scripts (e.g., adding a new script, new algorithm, or new capability within a language sandbox).
+- **`Fix`**: Bug fixes, runtime error corrections, and resolving broken scripts or unexpected behavior.
+- **`Refactor`**: Code restructuring, modularization, or cleanup without adding features or fixing bugs.
+- **`Style`**: Formatting, whitespace adjustments, indentation, or console output styling without affecting logic.
 
 ### Formatting Constraints
-1. **Prefix**: Must start with `Type: ` (e.g., `Feature: `, `Global: `, `Configuration: `, `Documentation: `). Do NOT format the prefix with backticks, markdown, or brackets.
+1. **Prefix**: Must start with `Type: ` (e.g., `Feature: `, `Fix: `, `Global: `, `Configuration: `, `Documentation: `, `Style: `, `Refactor: `). Do NOT format the prefix with backticks, markdown, or brackets.
 2. **Length**: Exactly 1 to 2 sentences describing the change and its intent.
 3. **Clarity**: Concisely summarize what changed and why.
 4. **No Extra Bloat**: Do NOT add markdown headers, bullet point lists, or footer metadata unless explicitly requested.
@@ -119,3 +122,12 @@ The commit `Type` must be exactly one of the following:
 
 - **Feature**:
   `Feature: Added a prime number generation script in the Kotlin sandbox with interactive CLI arguments.`
+
+- **Fix**:
+  `Fix: Resolved a nil pointer exception in the Ruby script when parsing optional command-line arguments.`
+
+- **Refactor**:
+  `Refactor: Modularized the Python sandbox entrypoint by extracting helper functions into separate utility modules.`
+
+- **Style**:
+  `Style: Adjusted trailing newline in the Ruby script output to align with the formatting of other language runners.`
