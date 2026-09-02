@@ -1,0 +1,13 @@
+{
+  "name": "oeuvre-javascript",
+  "version": "1.0.0",
+  "description": "JavaScript sandbox for oeuvre playground",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["playground", "sandbox", "javascript"],
+  "license": "MIT"
+}
