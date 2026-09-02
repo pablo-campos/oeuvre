@@ -11,7 +11,8 @@ def main
   puts "Platform: #{RUBY_PLATFORM}"
   puts "Timestamp: #{Time.now.iso8601}"
   puts "To install gems in this module, run: bundle install"
-  puts "----------------------------------------\n"
+  puts "----------------------------------------"
+  puts ""
 end
 
 main if __FILE__ == $PROGRAM_NAME
