@@ -36,12 +36,18 @@ make install
 
 ```text
 oeuvre/
+├── .agents/skills/
+│   └── commit-message/
+│       └── SKILL.md        # Commit message generator skill
 ├── .tool-versions          # asdf versions (Node, Python, Ruby, Kotlin, Gradle)
 ├── .gitignore              # Multi-ecosystem ignore rules
 ├── Makefile                # Root-level orchestrator & task runner
 ├── README.md               # Documentation and usage guide
+├── GEMINI.md               # Antigravity AI instructions & rules
+├── AGENTS.md               # Symlink to GEMINI.md (agent instructions)
 │
 ├── bash/                   # Shell / Bash scripts
+│   ├── generateJiraReport.sh # Jira release report generator from Git tags
 │   └── hello.sh            # Executable bash script
 │
 ├── javascript/             # JavaScript (Node.js) sandbox

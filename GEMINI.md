@@ -20,13 +20,18 @@ This repository defines guidelines and contextual information for Antigravity AI
 
 ```text
 oeuvre/
+├── .agents/skills/
+│   └── commit-message/
+│       └── SKILL.md        # Commit message generator skill
 ├── .tool-versions          # Pinned runtime versions (asdf)
 ├── .gitignore              # Multi-ecosystem ignore rules
 ├── Makefile                # Root-level orchestrator & task runner
 ├── README.md               # User documentation & setup guide
 ├── GEMINI.md               # Antigravity AI instructions & rules
+├── AGENTS.md               # Symlink to GEMINI.md (agent instructions)
 │
 ├── bash/                   # Shell / Bash scripts (executable scripts)
+│   ├── generateJiraReport.sh # Jira release report generator from Git tags
 │   └── hello.sh            # Bash entrypoint
 │
 ├── javascript/             # Node.js (v20+) sandbox with ES Modules
