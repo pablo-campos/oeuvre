@@ -46,6 +46,7 @@ ruby:
 bash:
 	@echo "--- [Bash] ---"
 	@./bash/hello.sh
+	@./bash/generateJiraReport.sh v0.0.1 v0.0.2
 
 java:
 	@echo "--- [Java] ---"

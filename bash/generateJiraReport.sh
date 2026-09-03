@@ -8,10 +8,15 @@
 #              configuration defined below.
 #
 # Usage:
-#   ./bash/generateJiraReport.sh <older_tag> <newer_tag>
+#   ./bash/generateJiraReport.sh <older_tag> <newer_tag_or_ref>
 #
-# Example:
+# Examples:
 #   ./bash/generateJiraReport.sh v1.0.0 v1.1.0
+#   ./bash/generateJiraReport.sh v1.0.0 HEAD
+#
+# Note:
+#   If you want to check all tickets included since a specific tag up to the
+#   tip of the current branch, you can pass 'HEAD' as the second parameter.
 #
 # If you encounter permission issues running this script, run:
 #   chmod +x ./bash/generateJiraReport.sh
@@ -62,8 +67,10 @@ readonly FEATURE_PROJECTS=("FEAT" "PROJ")
 
 if [ $# -lt 2 ]; then
     echo "Error: Missing required tag arguments."
-    echo "Usage: $0 <older_tag> <newer_tag>"
-    echo "Example: $0 v1.0.0 v1.1.0"
+    echo "Usage: $0 <older_tag> <newer_tag_or_ref>"
+    echo "Examples:"
+    echo "  $0 v1.0.0 v1.1.0"
+    echo "  $0 v1.0.0 HEAD    # Check tickets since tag to current branch tip"
     exit 1
 fi
 
