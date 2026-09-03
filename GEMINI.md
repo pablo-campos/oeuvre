@@ -83,51 +83,9 @@ AI tooling should leverage the root [Makefile](file:///Users/pablocampos/Develop
 
 ---
 
-## 4. Git Commit Message Generation Rules
+## 4. Git Commit Message Conventions
 
-When generating commit messages (such as when tapping the **"Generate"** button in the Source Control panel or when asked to produce a commit message), strictly follow this template and rules:
-
-### Template
-```text
-Type: description in 1-2 sentences.
-```
-
-### Allowed Types
-The commit `Type` must be exactly one of the following:
-
-- **`Global`**: Various changes across multiple languages or project-wide infrastructure (e.g., changes touching multiple sandboxes, root `Makefile`, multi-environment orchestration).
-- **`Documentation`**: Documentation updates (e.g., `README.md`, guide files, comments, docstrings).
-- **`Configuration`**: Language version updates, build tool changes, and environment setup (e.g., `.tool-versions`, Gradle build files, `package.json` scripts/metadata, Gemfile updates).
-- **`Feature`**: Specific to adding new functionality or new scripts (e.g., adding a new script, new algorithm, or new capability within a language sandbox).
-- **`Fix`**: Bug fixes, runtime error corrections, and resolving broken scripts or unexpected behavior.
-- **`Refactor`**: Code restructuring, modularization, or cleanup without adding features or fixing bugs.
-- **`Style`**: Formatting, whitespace adjustments, indentation, or console output styling without affecting logic.
-
-### Formatting Constraints
-1. **Prefix**: Must start with `Type: ` (e.g., `Feature: `, `Fix: `, `Global: `, `Configuration: `, `Documentation: `, `Style: `, `Refactor: `). Do NOT format the prefix with backticks, markdown, or brackets.
-2. **Length**: Exactly 1 to 2 sentences describing the change and its intent.
-3. **Clarity**: Concisely summarize what changed and why.
-4. **No Extra Bloat**: Do NOT add markdown headers, bullet point lists, or footer metadata unless explicitly requested.
-
-### Examples
-
-- **Global**:
-  `Global: Standardized error logging across the Python, JavaScript, and Ruby sandboxes. Updated the root Makefile clean target to handle new temporary log files.`
-
-- **Documentation**:
-  `Documentation: Updated the README with instructions for configuring custom Gradle toolchains and running Java single-file entrypoints.`
-
-- **Configuration**:
-  `Configuration: Updated Node.js and Ruby versions in .tool-versions and refreshed package manifests.`
-
-- **Feature**:
-  `Feature: Added a prime number generation script in the Kotlin sandbox with interactive CLI arguments.`
-
-- **Fix**:
-  `Fix: Resolved a nil pointer exception in the Ruby script when parsing optional command-line arguments.`
-
-- **Refactor**:
-  `Refactor: Modularized the Python sandbox entrypoint by extracting helper functions into separate utility modules.`
-
-- **Style**:
-  `Style: Adjusted trailing newline in the Ruby script output to align with the formatting of other language runners.`
+When generating commit messages (including via the Source Control panel or chat requests):
+- **Template**: `Type: description in 1-2 sentences.`
+- **Allowed Types**: `Global`, `Documentation`, `Configuration`, `Feature`, `Fix`, `Refactor`, `Style`.
+- **Reference**: For detailed rules, constraints, and examples, refer to the [commit-message](file:///Users/pablocampos/Development/Repositories/oeuvre/.agents/skills/commit-message/SKILL.md) skill (`.agents/skills/commit-message/SKILL.md`).
