@@ -22,41 +22,41 @@ This repository defines guidelines and contextual information for Antigravity AI
 oeuvre/
 ├── .agents/skills/
 │   └── commit-message/
-│       └── SKILL.md        # Commit message generator skill
-├── .tool-versions          # Pinned runtime versions (asdf)
-├── .gitignore              # Multi-ecosystem ignore rules
-├── Makefile                # Root-level orchestrator & task runner
-├── README.md               # User documentation & setup guide
-├── GEMINI.md               # Antigravity AI instructions & rules
-├── AGENTS.md               # Symlink to GEMINI.md (agent instructions)
+│       └── SKILL.md              # Commit message generator skill
+├── .tool-versions                # Pinned runtime versions (asdf)
+├── .gitignore                    # Multi-ecosystem ignore rules
+├── Makefile                      # Root-level orchestrator & task runner
+├── README.md                     # User documentation & setup guide
+├── GEMINI.md                     # Antigravity AI instructions & rules
+├── AGENTS.md                     # Symlink to GEMINI.md (agent instructions)
 │
-├── bash/                   # Shell / Bash scripts (executable scripts)
-│   ├── generateJiraReport.sh # Jira release report generator from Git tags
-│   └── hello.sh            # Bash entrypoint
+├── bash/                         # Shell / Bash scripts (executable scripts)
+│   ├── generateJiraReport.sh     # Jira release report generator from Git tags
+│   └── hello.sh                  # Bash entrypoint
 │
-├── javascript/             # Node.js (v20+) sandbox with ES Modules
-│   ├── package.json        # npm package manifest ("type": "module")
-│   └── src/index.js        # JavaScript entrypoint
+├── javascript/                   # Node.js (v20+) sandbox with ES Modules
+│   ├── package.json              # npm package manifest ("type": "module")
+│   └── src/index.js              # JavaScript entrypoint
 │
-├── python/                 # Python 3.10 sandbox
-│   ├── pyproject.toml      # Project configuration
-│   ├── requirements.txt    # Pip dependencies list
-│   └── main.py             # Python entrypoint
+├── python/                       # Python 3.10 sandbox
+│   ├── pyproject.toml            # Project configuration
+│   ├── requirements.txt          # Pip dependencies list
+│   └── main.py                   # Python entrypoint
 │
-├── ruby/                   # Ruby 3.3 sandbox
-│   ├── Gemfile             # Bundler gem list
-│   └── main.rb             # Ruby entrypoint
+├── ruby/                         # Ruby 3.3 sandbox
+│   ├── Gemfile                   # Bundler gem list
+│   └── main.rb                   # Ruby entrypoint
 │
-├── java/                   # Java 21 sandbox (Gradle multi-project)
-│   ├── build.gradle.kts    # Java Gradle build script
+├── java/                         # Java 21 sandbox (Gradle multi-project)
+│   ├── build.gradle.kts          # Java Gradle build script
 │   └── src/main/java/oeuvre/Main.java
 │
-├── kotlin/                 # Kotlin 2.1 sandbox (Gradle multi-project)
-│   ├── build.gradle.kts    # Kotlin Gradle build script
+├── kotlin/                       # Kotlin 2.1 sandbox (Gradle multi-project)
+│   ├── build.gradle.kts          # Kotlin Gradle build script
 │   └── src/main/kotlin/oeuvre/Main.kt
 │
-├── settings.gradle.kts     # Root Gradle multi-project definition (:java, :kotlin)
-└── gradlew / gradlew.bat   # Gradle 8.12 wrapper
+├── settings.gradle.kts           # Root Gradle multi-project definition (:java, :kotlin)
+└── gradlew / gradlew.bat         # Gradle 8.12 wrapper
 ```
 
 ---

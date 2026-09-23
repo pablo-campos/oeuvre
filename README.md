@@ -38,44 +38,44 @@ make install
 oeuvre/
 ├── .agents/skills/
 │   └── commit-message/
-│       └── SKILL.md        # Commit message generator skill
-├── .tool-versions          # asdf versions (Node, Python, Ruby, Kotlin, Gradle)
-├── .gitignore              # Multi-ecosystem ignore rules
-├── Makefile                # Root-level orchestrator & task runner
-├── README.md               # Documentation and usage guide
-├── GEMINI.md               # Antigravity AI instructions & rules
-├── AGENTS.md               # Symlink to GEMINI.md (agent instructions)
+│       └── SKILL.md              # Commit message generator skill
+├── .tool-versions                # asdf versions (Node, Python, Ruby, Kotlin, Gradle)
+├── .gitignore                    # Multi-ecosystem ignore rules
+├── Makefile                      # Root-level orchestrator & task runner
+├── README.md                     # Documentation and usage guide
+├── GEMINI.md                     # Antigravity AI instructions & rules
+├── AGENTS.md                     # Symlink to GEMINI.md (agent instructions)
 │
-├── bash/                   # Shell / Bash scripts
-│   ├── generateJiraReport.sh # Jira release report generator from Git tags
-│   └── hello.sh            # Executable bash script
+├── bash/                         # Shell / Bash scripts
+│   ├── generateJiraReport.sh     # Jira release report generator from Git tags
+│   └── hello.sh                  # Executable bash script
 │
-├── javascript/             # JavaScript (Node.js) sandbox
-│   ├── package.json        # npm package manifest (ES Modules)
+├── javascript/                   # JavaScript (Node.js) sandbox
+│   ├── package.json              # npm package manifest (ES Modules)
 │   └── src/
-│       └── index.js        # JavaScript entrypoint
+│       └── index.js              # JavaScript entrypoint
 │
-├── python/                 # Python sandbox
-│   ├── pyproject.toml      # Project configuration
-│   ├── requirements.txt    # Pip package list
-│   └── main.py             # Python entrypoint
+├── python/                       # Python sandbox
+│   ├── pyproject.toml            # Project configuration
+│   ├── requirements.txt          # Pip package list
+│   └── main.py                   # Python entrypoint
 │
-├── ruby/                   # Ruby sandbox
-│   ├── Gemfile             # Bundler gem list
-│   └── main.rb             # Ruby entrypoint
+├── ruby/                         # Ruby sandbox
+│   ├── Gemfile                   # Bundler gem list
+│   └── main.rb                   # Ruby entrypoint
 │
-├── java/                   # Java sandbox
-│   ├── build.gradle.kts    # Java Gradle build file
+├── java/                         # Java sandbox
+│   ├── build.gradle.kts          # Java Gradle build file
 │   └── src/main/java/oeuvre/
-│       └── Main.java       # Java Main class
+│       └── Main.java             # Java Main class
 │
-├── kotlin/                 # Kotlin sandbox
-│   ├── build.gradle.kts    # Kotlin Gradle build file
+├── kotlin/                       # Kotlin sandbox
+│   ├── build.gradle.kts          # Kotlin Gradle build file
 │   └── src/main/kotlin/oeuvre/
-│       └── Main.kt         # Kotlin Main program
+│       └── Main.kt               # Kotlin Main program
 │
-├── settings.gradle.kts     # Root Gradle multi-project configuration
-└── gradlew                 # Gradle wrapper executable
+├── settings.gradle.kts           # Root Gradle multi-project configuration
+└── gradlew                       # Gradle wrapper executable
 ```
 
 ---
