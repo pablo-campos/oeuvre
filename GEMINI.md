@@ -39,6 +39,12 @@ oeuvre/
 │   └── src/index.js              # JavaScript entrypoint
 │
 ├── python/                       # Python 3.12 sandbox
+│   ├── agnostic_chat/            # Multi-provider LLM chat module (Gemini, OpenAI)
+│   │   ├── __init__.py           # Module package initialization
+│   │   ├── ai_assistant.py       # Base AI assistant class & Picasso persona
+│   │   ├── gemini_assistant.py   # Google GenAI SDK integration
+│   │   ├── openai_assistant.py   # OpenAI SDK integration
+│   │   └── start.py              # Interactive multi-model chat CLI runner
 │   ├── pyproject.toml            # Project configuration
 │   ├── requirements.txt          # Pip dependencies list
 │   └── main.py                   # Python entrypoint
@@ -69,7 +75,7 @@ AI tooling should leverage the root [Makefile](file:///Users/pablocampos/Develop
 | :--- | :--- |
 | `make run-all` | Runs entrypoints sequentially across all 6 environments. |
 | `make js` | Runs JavaScript sandbox (`node javascript/src/index.js`). |
-| `make python` | Runs Python sandbox (`python3 python/main.py`). |
+| `make python` | Runs Python sandbox (`python3 python/main.py` & `agnostic_chat.start`). |
 | `make ruby` | Runs Ruby sandbox (`ruby ruby/main.rb`). |
 | `make bash` | Runs Bash sandbox (`./bash/hello.sh`). |
 | `make java` | Runs Java application via Gradle (`./gradlew :java:run --quiet`). |

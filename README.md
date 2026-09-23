@@ -56,6 +56,12 @@ oeuvre/
 │       └── index.js              # JavaScript entrypoint
 │
 ├── python/                       # Python sandbox
+│   ├── agnostic_chat/            # Multi-provider LLM chat module (Gemini, OpenAI)
+│   │   ├── __init__.py           # Package initialization
+│   │   ├── ai_assistant.py       # Base AI assistant class & Picasso persona
+│   │   ├── gemini_assistant.py   # Google GenAI SDK integration
+│   │   ├── openai_assistant.py   # OpenAI SDK integration
+│   │   └── start.py              # Interactive multi-model chat CLI runner
 │   ├── pyproject.toml            # Project configuration
 │   ├── requirements.txt          # Pip package list
 │   └── main.py                   # Python entrypoint
@@ -106,13 +112,36 @@ oeuvre/
 ### 2. Python
 * **Directory**: `python/`
 * **Entrypoint**: `python/main.py`
+* **Features & Modules**:
+  * **Hello World Runner**: Standard environment info probe (`main.py`).
+  * **Agnostic Chat (`agnostic_chat/`)**: A provider-agnostic conversational AI CLI with a creative Picasso persona, supporting both Google Gemini (`gemini-2.5-flash` via `google-genai`) and OpenAI (`gpt-4o` via `openai`).
 * **How to Run**:
   ```bash
-  # From root:
+  # Run entrypoint & interactive chat from root:
   make python
-  # Or from directory:
+
+  # Run standalone entrypoint:
+  python3 python/main.py
+
+  # Run Agnostic Chat CLI directly:
+  PYTHONPATH=python python3 -m agnostic_chat.start
+  # Or from the python/ directory:
   cd python
-  python3 main.py
+  python3 -m agnostic_chat.start
+  ```
+* **Agnostic Chat Configuration & Commands**:
+  * **API Keys**: Set environment variables before running:
+    ```bash
+    export GEMINI_API_KEY="your-gemini-api-key"
+    export OPENAI_API_KEY="your-openai-api-key"
+    ```
+  * **Optional Overrides**: `GEMINI_MODEL`, `OPENAI_MODEL`, `USER_NAME`.
+  * **Interactive CLI Commands**:
+    * `gemini`: Switch active assistant to Gemini.
+    * `openai`: Switch active assistant to OpenAI.
+    * `chat`: Display conversation transcript.
+    * `clear`: Clear conversation history.
+    * `quit`: Exit the chat session.
   ```
 * **Adding Packages**:
   ```bash
