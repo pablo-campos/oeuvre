@@ -27,8 +27,9 @@ make java         # Java (via Gradle)
 make kotlin       # Kotlin (via Gradle)
 
 # Standalone tools & utilities
-make chat         # Agnostic Chat CLI (Gemini / OpenAI)
-make jira-report  # Jira release report generator (FROM=... TO=...)
+make chat            # Agnostic Chat CLI (Gemini / OpenAI)
+make jira-report     # Jira release report generator (FROM=... TO=...)
+make validate-images # Android image & 9-patch validator (IMAGES=... AAPT=...)
 
 # Install dependencies across all modules
 make install
@@ -52,7 +53,8 @@ oeuvre/
 │
 ├── bash/                         # Shell / Bash scripts
 │   ├── generateJiraReport.sh     # Jira release report generator from Git tags
-│   └── hello.sh                  # Executable bash script
+│   ├── hello.sh                  # Executable bash script
+│   └── imageValidation.sh        # Android image & 9-Patch validator (MIME / AAPT)
 │
 ├── javascript/                   # JavaScript (Node.js) sandbox
 │   ├── package.json              # npm package manifest (ES Modules)

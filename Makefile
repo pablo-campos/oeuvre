@@ -1,27 +1,30 @@
-.PHONY: help run-all js python ruby bash java kotlin chat jira-report install clean
+.PHONY: help run-all js python ruby bash java kotlin chat jira-report validate-images install clean
 
 # Default variables for configurable targets
 FROM ?= v0.0.1
 TO ?= v0.0.2
+IMAGES ?= .
+AAPT ?=
 
 # Default target: show help
 help:
 	@echo "================================================================="
 	@echo "  oeuvre playground - Available Commands"
 	@echo "================================================================="
-	@echo "  make run-all      Run Hello World across all 6 languages"
-	@echo "  make js           Run JavaScript (Node.js)"
-	@echo "  make python       Run Python"
-	@echo "  make ruby         Run Ruby"
-	@echo "  make bash         Run Shell / Bash script"
-	@echo "  make java         Run Java application (via Gradle)"
-	@echo "  make kotlin       Run Kotlin application (via Gradle)"
+	@echo "  make run-all         Run Hello World across all 6 languages"
+	@echo "  make js              Run JavaScript (Node.js)"
+	@echo "  make python          Run Python"
+	@echo "  make ruby            Run Ruby"
+	@echo "  make bash            Run Shell / Bash script"
+	@echo "  make java            Run Java application (via Gradle)"
+	@echo "  make kotlin          Run Kotlin application (via Gradle)"
 	@echo ""
-	@echo "  make chat         Run Agnostic Chat CLI (Python)"
-	@echo "  make jira-report  Generate Jira release report (FROM=... TO=...)"
+	@echo "  make chat            Run Agnostic Chat CLI (Python)"
+	@echo "  make jira-report     Generate Jira release report (FROM=... TO=...)"
+	@echo "  make validate-images Validate Android images (IMAGES=... AAPT=...)"
 	@echo ""
-	@echo "  make install      Install packages/dependencies across all subprojects"
-	@echo "  make clean        Clean build artifacts and temporary caches"
+	@echo "  make install         Install packages/dependencies across all subprojects"
+	@echo "  make clean           Clean build artifacts and temporary caches"
 	@echo "================================================================="
 
 # Run all languages in sequence
@@ -70,6 +73,10 @@ chat:
 jira-report:
 	@echo "--- [Jira Report] ---"
 	@./bash/generateJiraReport.sh $(FROM) $(TO)
+
+validate-images:
+	@echo "--- [Android Image Validation] ---"
+	@./bash/imageValidation.sh $(IMAGES) $(AAPT)
 
 # Install dependencies across all modules
 install:

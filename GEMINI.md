@@ -32,7 +32,8 @@ oeuvre/
 │
 ├── bash/                         # Shell / Bash scripts (executable scripts)
 │   ├── generateJiraReport.sh     # Jira release report generator from Git tags
-│   └── hello.sh                  # Bash entrypoint
+│   ├── hello.sh                  # Bash entrypoint
+│   └── imageValidation.sh        # Android image & 9-Patch validator (MIME / AAPT)
 │
 ├── javascript/                   # Node.js (v20+) sandbox with ES Modules
 │   ├── package.json              # npm package manifest ("type": "module")
@@ -82,6 +83,7 @@ AI tooling should leverage the root [Makefile](file:///Users/pablocampos/Develop
 | `make kotlin` | Runs Kotlin application via Gradle (`./gradlew :kotlin:run --quiet`). |
 | `make chat` | Runs Agnostic Chat CLI (`PYTHONPATH=python python3 -m agnostic_chat.start`). |
 | `make jira-report` | Generates Jira release report from Git tags (`./bash/generateJiraReport.sh`). |
+| `make validate-images` | Validates Android images and 9-patches (`./bash/imageValidation.sh`). |
 | `make install` | Resolves and installs dependencies for all subprojects. |
 | `make clean` | Cleans JVM build artifacts and Python cache directories. |
 
