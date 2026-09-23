@@ -75,11 +75,13 @@ AI tooling should leverage the root [Makefile](file:///Users/pablocampos/Develop
 | :--- | :--- |
 | `make run-all` | Runs entrypoints sequentially across all 6 environments. |
 | `make js` | Runs JavaScript sandbox (`node javascript/src/index.js`). |
-| `make python` | Runs Python sandbox (`python3 python/main.py` & `agnostic_chat.start`). |
+| `make python` | Runs Python sandbox (`python3 python/main.py`). |
 | `make ruby` | Runs Ruby sandbox (`ruby ruby/main.rb`). |
 | `make bash` | Runs Bash sandbox (`./bash/hello.sh`). |
 | `make java` | Runs Java application via Gradle (`./gradlew :java:run --quiet`). |
 | `make kotlin` | Runs Kotlin application via Gradle (`./gradlew :kotlin:run --quiet`). |
+| `make chat` | Runs Agnostic Chat CLI (`PYTHONPATH=python python3 -m agnostic_chat.start`). |
+| `make jira-report` | Generates Jira release report from Git tags (`./bash/generateJiraReport.sh`). |
 | `make install` | Resolves and installs dependencies for all subprojects. |
 | `make clean` | Cleans JVM build artifacts and Python cache directories. |
 

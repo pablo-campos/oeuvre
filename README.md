@@ -19,12 +19,16 @@ You can run any or all environments from the project root using the provided `Ma
 make run-all
 
 # Run individual languages
-make js       # JavaScript (Node.js)
-make python   # Python
-make ruby     # Ruby
-make bash     # Shell / Bash
-make java     # Java (via Gradle)
-make kotlin   # Kotlin (via Gradle)
+make js           # JavaScript (Node.js)
+make python       # Python
+make ruby         # Ruby
+make bash         # Shell / Bash
+make java         # Java (via Gradle)
+make kotlin       # Kotlin (via Gradle)
+
+# Standalone tools & utilities
+make chat         # Agnostic Chat CLI (Gemini / OpenAI)
+make jira-report  # Jira release report generator (FROM=... TO=...)
 
 # Install dependencies across all modules
 make install
@@ -117,17 +121,18 @@ oeuvre/
   * **Agnostic Chat (`agnostic_chat/`)**: A provider-agnostic conversational AI CLI with a creative Picasso persona, supporting both Google Gemini (`gemini-2.5-flash` via `google-genai`) and OpenAI (`gpt-4o` via `openai`).
 * **How to Run**:
   ```bash
-  # Run entrypoint & interactive chat from root:
+  # Run Hello World entrypoint from root:
   make python
 
-  # Run standalone entrypoint:
+  # Run Agnostic Chat CLI from root:
+  make chat
+
+  # Or run standalone entrypoint directly:
   python3 python/main.py
 
-  # Run Agnostic Chat CLI directly:
+  # Or run Agnostic Chat CLI directly:
   PYTHONPATH=python python3 -m agnostic_chat.start
-  # Or from the python/ directory:
-  cd python
-  python3 -m agnostic_chat.start
+  # (Or from the python/ directory: cd python && python3 -m agnostic_chat.start)
   ```
 * **Agnostic Chat Configuration & Commands**:
   * **API Keys**: Set environment variables before running:

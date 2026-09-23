@@ -1,4 +1,8 @@
-.PHONY: help run-all js python ruby bash java kotlin install clean
+.PHONY: help run-all js python ruby bash java kotlin chat jira-report install clean
+
+# Default variables for configurable targets
+FROM ?= v0.0.1
+TO ?= v0.0.2
 
 # Default target: show help
 help:
@@ -12,6 +16,9 @@ help:
 	@echo "  make bash         Run Shell / Bash script"
 	@echo "  make java         Run Java application (via Gradle)"
 	@echo "  make kotlin       Run Kotlin application (via Gradle)"
+	@echo ""
+	@echo "  make chat         Run Agnostic Chat CLI (Python)"
+	@echo "  make jira-report  Generate Jira release report (FROM=... TO=...)"
 	@echo ""
 	@echo "  make install      Install packages/dependencies across all subprojects"
 	@echo "  make clean        Clean build artifacts and temporary caches"
@@ -38,7 +45,6 @@ js:
 python:
 	@echo "--- [Python] ---"
 	@python3 python/main.py
-	@PYTHONPATH=python python3 -m agnostic_chat.start
 
 ruby:
 	@echo "--- [Ruby] ---"
@@ -47,7 +53,6 @@ ruby:
 bash:
 	@echo "--- [Bash] ---"
 	@./bash/hello.sh
-	@./bash/generateJiraReport.sh v0.0.1 v0.0.2
 
 java:
 	@echo "--- [Java] ---"
@@ -56,6 +61,15 @@ java:
 kotlin:
 	@echo "--- [Kotlin] ---"
 	@./gradlew :kotlin:run --quiet
+
+# Standalone utilities & special cases
+chat:
+	@echo "--- [Agnostic Chat] ---"
+	@PYTHONPATH=python python3 -m agnostic_chat.start
+
+jira-report:
+	@echo "--- [Jira Report] ---"
+	@./bash/generateJiraReport.sh $(FROM) $(TO)
 
 # Install dependencies across all modules
 install:
@@ -76,3 +90,4 @@ clean:
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	@find . -type f -name "*.pyc" -delete 2>/dev/null || true
 	@echo "Clean completed."
+
