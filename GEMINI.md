@@ -38,7 +38,7 @@ oeuvre/
 │   ├── package.json              # npm package manifest ("type": "module")
 │   └── src/index.js              # JavaScript entrypoint
 │
-├── python/                       # Python 3.10 sandbox
+├── python/                       # Python 3.12 sandbox
 │   ├── pyproject.toml            # Project configuration
 │   ├── requirements.txt          # Pip dependencies list
 │   └── main.py                   # Python entrypoint

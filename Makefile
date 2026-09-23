@@ -38,6 +38,7 @@ js:
 python:
 	@echo "--- [Python] ---"
 	@python3 python/main.py
+	@PYTHONPATH=python python3 -m agnostic_chat.start
 
 ruby:
 	@echo "--- [Ruby] ---"

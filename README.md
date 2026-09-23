@@ -211,7 +211,7 @@ oeuvre/
 
 This repository uses [`asdf`](https://asdf-vm.com/) via [.tool-versions](file:///Users/pablocampos/Development/Repositories/oeuvre/.tool-versions):
 - **Node.js**: `20.13.1` (or local `v22`)
-- **Python**: `3.10.4`
+- **Python**: `3.12.3`
 - **Ruby**: `3.3.0`
 - **Kotlin**: `2.1.20`
 - **Gradle**: `8.12`
